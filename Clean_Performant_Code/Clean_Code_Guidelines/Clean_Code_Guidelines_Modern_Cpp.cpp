@@ -16,6 +16,81 @@ namespace CleanCodeGuidelines_ModernCpp {
 
     namespace Keyword_Auto {
 
+        std::map<int, std::string> func()
+        {
+            return std::map<int, std::string>();
+        }
+
+        // Rückgabetyp einer Funktion
+        auto summe(int n, int m)
+        {
+            return n + m;
+        }
+
+        //auto tueWas(bool flag, int n, double m) -> double
+        //{
+        //    if (flag) {
+        //        return n;
+        //    }
+        //    else
+        //    {
+        //        return m;
+        //    }
+        //}
+
+        //template<typename T, typename U>
+        //auto tueWas(bool flag, T n, U m) -> decltype(n + m)
+        //{
+        //    if (flag) {
+        //        return n;
+        //    }
+        //    else
+        //    {
+        //        return m;
+        //    }
+        //}
+
+        template<typename T, typename U>
+      decltype(  std::declval<T>() + std::declval<U>() )
+          tueWas(bool flag, T n, U m)
+        {
+            if (flag) {
+                return n;
+            }
+            else
+            {
+                return m;
+            }
+        }
+
+        static void guidelines_keyword_auto_seminar()
+        {
+            auto result = summe(11, 22);
+
+            auto result2 = tueWas(false, (short) 123, 123l);
+
+
+            //x = 123;  // Python
+
+            //var z;
+
+            //z = 123.456;  //  JavaScript
+
+            auto n = 123;  // Type Deduction
+                           // Typableitung
+        
+            auto m = 123.3453F;
+
+            int n1 = 123;
+
+            auto klein = (unsigned char) 123;
+
+            auto z = func();
+
+            std::map<int, std::string> z1 = func();
+        }
+
+
         // =======================================================================
         // Using Keyword 'auto'
         // First Example
@@ -26,7 +101,7 @@ namespace CleanCodeGuidelines_ModernCpp {
 
             std::map<int, std::string>::iterator it{ aMap.begin() };
 
-            // std::pair<int, std::string>& entry1{ *it };  // Why this line DOES NOT compile ???
+        //    std::pair<int, std::string>& entry1{ *it };  // Why this line DOES NOT compile ???
 
             auto& entry2{ *it };
         }

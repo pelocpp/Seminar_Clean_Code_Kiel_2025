@@ -7,3 +7,290 @@ Guten Morgen // Moin
 Peter Loos
 
 =======================================
+
+== Visual Studio
+== Github.com
+
+https://github.com/pelocpp
+
+=======================================
+
+== Was sind meine Erwartungen
+
+== No Modern C++
+
+== C++ 98  // No std::string
+
+== Modern C++
+
+== Ohne STL // weil keine dyn. Speicherverwaltung
+
+== Vererbung
+
+== Templates
+
+== Ausnahmebehandlung
+
+== new // delete // eigene Speicherverwaltung
+
+------------------------------------------
+
+== Design Pattern and More
+
+== Vererbung
+
+== Eigene Vektor-Klasse
+
+------------------------------------------
+
+To Do Liste:
+-----------
+
+auto  - YES
+
+Lambdas - YES
+
+Nutzung von Smart Pointer Klassen (std::unique_ptr, std::shared_ptr und std::weak_ptr)
+
+Initialisierung
+
+Ressourcenverwaltung mit RAII
+
+Range-based for-Loop
+
+constexpr - YES
+Benutzerdefinierte Literale - YES
+
+Verwenden Sie Container und Algorithmen der C++-Bibliothek STL
+
+Wozu gibt es den "lightweight" Container std::initializer_list?
+
+Bessere Lesbarkeit durch Structured Binding
+
+Typreiche Programmierung (Type-Rich Programming, Type Traits)
+
+Strong Types
+
+Neue Utility Klassen
+ std::array, std::to_array und std::span
+ std::optional
+ std::variant // Visitor-Konzept 
+ std::any
+ std::pair
+ std::tuple
+
+Welche Vorteile bietet die Klasse std::string_view gegenüber std::string?
+
+
+STL
+
+------------------------------------------
+
+Modern C++   // C++ 11
+
+== auto
+
+== Lambda // STL-Algorithmen
+
+== Verschiebe-Semantik (Move-Semantik)
+
+== std::initializer_list
+
+== Intelligente Zeiger (Smart Pointer)
+
+== STL-Algorithmen  // Performanz
+
+------------------------------------------
+
+== Templates
+
+== Type Traits // Türe zu öffnen
+
+------------------------------------------
+
+Utility Klassen:  C++ 17
+
+std::string_view
+
+------------------------------------------
+
+  Zuviel Hierarchie als zuwenig.
+
+Was wollen wir modellieren ???
+
+Habe ich das Instrument der Vererbung sinnvoll eingesetzt?
+
+Hilfestellung:
+
+== Klasse Rectangle
+== Klasse ColoredRectangle
+
+Ein ColoredRectangle ist ein Rechteck.
+
+Beziehungen // Relationships:
+
+is-a   // ist-ein
+
+Vererbung: Die ist-ein Beziehung MUSS erfüllt sein.
+
+== Klasse Point
+== Klasse Line
+
+Eine Linie ist eine Menge von Punkten
+
+Eine Linie hat einen Start- und Endpunkt.
+
+Eine Linie ist ein Punkt: No
+Ein Punkt ist eine Linie: No
+
+Eine Linie hat einen Start- und Endpunkt.
+
+has-a // hat-ein Beziehung  // Mehrere
+
+class Line 
+{
+    Point m_begin;
+    Point m_end;
+}
+
+
+ Zuviel Hierarchie: Wenn wir die hat-ein Beziehung
+ vorliegen haben: KEINE Vererbung.
+
+------------------------------------------
+
+https://wandbox.org/
+
+------------------------------------------
+
+== Flughöhe 
+
+------------------------------------------
+
+A)
+
+Schlüsselwort auto:
+
+Wie komme ich von 123 zum Typ ???
+
+In C/C++ gibt es ein Lexikon:
+
+123 => signed int
+
+123.45645 => double
+
+B)
+
+Schlüsselwort auto:
+
+
+double tueWas(bool flag, int n, double m);
+        
+auto tueWas(bool flag, int n, double m) -> double
+    
+WHY ????????????????????????????
+
+=======================================
+
+Evolution von Programmiersprachen:
+
+Trend:
+
+==> C#, Java:  "Inline-Methode"
+
+C++: Da sind wir dabei.
+
+Neues auf bewährtes abzubilden:
+
+Ein Lambda ist ein Aufrufbares Objekt.
+
+"Aufrufbares Objekt"
+
+Wann ist eine Klasse / Objekte aufrufbar.
+Wenn die Klasse den operator() implementiert.
+
+
+Lokale Variablen der umgebenden Funktion
+sind verwendbar:
+
+a) Kopie
+b) Referenz
+
+Lambda:  "Lambda-Methoden"
+
+Exakt:  Ein Lambda ist ein OBJEKT !!!!!!!!!!
+
+===========================================
+
+Cpp Insights:
+
+Converter:
+
+Modern C++ ==> Classic C++
+
+===========================================
+
+Embedded:
+
+constexpr
+
+https://github.com/pelocpp/cpp_modern/blob/master/GeneralSnippets/ConstExpr/Constexpr.md
+
+
+        constexpr Complex c3 = c1 + c2;
+00007FF74F1C2660  movss       xmm0,dword ptr [__real@40800000 (07FF74F241D3Ch)]  
+00007FF74F1C2668  movss       dword ptr [c3],xmm0  
+00007FF74F1C2670  movss       xmm0,dword ptr [__real@40a00000 (07FF74F241D40h)]  
+00007FF74F1C2678  movss       dword ptr [rbp+8Ch],xmm0  
+
+        Complex c3 = c1 + c2;
+00007FF652811FAF  lea         r8,[c2]  
+00007FF652811FB3  lea         rdx,[c3]  
+00007FF652811FBA  lea         rcx,[c1]  
+00007FF652811FBE  call        ConstExprComplex::Complex::operator+ 
+
+Ausblick:
+
+ constexpr
+
+std::array
+
+std::vector 
+
+// ====================================
+
+Clean Code
+
+"Hübscher / lesbarer Code"
+
+C++ 11:
+
+Konstanten:
+
+123
+
+123l
+
+123_euro
+
+123_kg
+
+123_kilogramm    // int, double
+
+0xFFAA00_color   // class Color
+
+"123"_kg
+
+"15:00:00"_uhrzeit
+
+Beliebige Zeichenkette: Format
+
+// Chrono
+
+UDL:   User Defined Literal
+
+Speziellen Operator:
+
+Zieltyp operator "" _kilogramm  (params) 
+
+================================================
