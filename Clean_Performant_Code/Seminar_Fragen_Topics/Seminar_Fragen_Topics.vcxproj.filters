@@ -15,28 +15,28 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Lambda.cpp">
+    <ClCompile Include="Topic_01_Lambda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Program.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="constexpr.cpp">
+    <ClCompile Include="Topic_02_Constexpr.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="constexpr2.cpp">
+    <ClCompile Include="Topic_03_Constexpr_CRC.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UDL.cpp">
+    <ClCompile Include="Topic_03_UDL.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="BraceInitialization.cpp">
+    <ClCompile Include="Topic_05_BraceInitialization.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InitializerList.cpp">
+    <ClCompile Include="Topic_06_InitializerList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Explicit.cpp">
+    <ClCompile Include="Topic_07_Explicit.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

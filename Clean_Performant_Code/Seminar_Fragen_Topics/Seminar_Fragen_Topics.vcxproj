@@ -124,14 +124,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="BraceInitialization.cpp" />
-    <ClCompile Include="constexpr.cpp" />
-    <ClCompile Include="constexpr2.cpp" />
-    <ClCompile Include="Explicit.cpp" />
-    <ClCompile Include="InitializerList.cpp" />
-    <ClCompile Include="Lambda.cpp" />
+    <ClCompile Include="Topic_05_BraceInitialization.cpp" />
+    <ClCompile Include="Topic_02_Constexpr.cpp" />
+    <ClCompile Include="Topic_03_Constexpr_CRC.cpp" />
+    <ClCompile Include="Topic_07_Explicit.cpp" />
+    <ClCompile Include="Topic_06_InitializerList.cpp" />
+    <ClCompile Include="Topic_01_Lambda.cpp" />
     <ClCompile Include="Program.cpp" />
-    <ClCompile Include="UDL.cpp" />
+    <ClCompile Include="Topic_03_UDL.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

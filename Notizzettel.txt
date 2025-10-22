@@ -1,4 +1,4 @@
-=======================================
+====================================================
 
 Seminar "Clean Code"
 
@@ -6,14 +6,18 @@ Guten Morgen // Moin
 
 Peter Loos
 
-=======================================
+EMail:
+
+peter.loos@gmx.de
+
+https://github.com/pelocpp
+
+====================================================
 
 == Visual Studio
 == Github.com
 
-https://github.com/pelocpp
-
-=======================================
+====================================================
 
 == Was sind meine Erwartungen
 
@@ -33,91 +37,52 @@ https://github.com/pelocpp
 
 == new // delete // eigene Speicherverwaltung
 
-------------------------------------------
+====================================================
 
-== Design Pattern and More
+Donnerstag:
 
-== Vererbung
+=) Design Pattern:
 
-== Eigene Vektor-Klasse
+   Prototype	Prototype Pattern – auch als Virtueller Konstruktor bezeichnet.
+   Decorator
+   Adapter
+   Proxy
+   Template Method
+   Visitor Method
+   
+   RAII
 
-------------------------------------------
+=) Prinzipien (KISS, ...)
 
-To Do Liste:
------------
+=) Unit Testing
 
-auto  - YES
+=) Smart-Pointer (std::shared / std:weak_ptr)
 
-Lambdas - YES
+=) Move-Seemantik
 
-Nutzung von Smart Pointer Klassen (std::unique_ptr, std::shared_ptr und std::weak_ptr)
+=) Programmieren mit Datentypen
 
-Initialisierung
+=) STL / Algorithmen / Performanz
 
-Verschieben ist besser als Kopieren (std::move)
+=) Neue Utility Klassen
+     std::array, std::to_array und std::span
+     std::optional
+     std::variant // Visitor-Konzept 
+     std::any
+     std::pair
+     std::tuple
 
-Ressourcenverwaltung mit RAII
+     std::string_view // std::string
 
-Range-based for-Loop
+=) Verschiedenes
+   Structured Binding
+   Range-based for-Loop
+   Strong Types
 
-constexpr - YES
-Benutzerdefinierte Literale - YES
+====================================================
+====================================================
 
-Verwenden Sie Container und Algorithmen der C++-Bibliothek STL
-
-Wozu gibt es den "lightweight" Container std::initializer_list?
-
-Bessere Lesbarkeit durch Structured Binding
-
-Typreiche Programmierung (Type-Rich Programming, Type Traits)
-
-Strong Types
-
-Neue Utility Klassen
- std::array, std::to_array und std::span
- std::optional
- std::variant // Visitor-Konzept 
- std::any
- std::pair
- std::tuple
-
-Welche Vorteile bietet die Klasse std::string_view gegenüber std::string?
-
-explicit
-
-STL
-
-------------------------------------------
-
-Modern C++   // C++ 11
-
-== auto
-
-== Lambda // STL-Algorithmen
-
-== Verschiebe-Semantik (Move-Semantik)
-
-== std::initializer_list
-
-== Intelligente Zeiger (Smart Pointer)
-
-== STL-Algorithmen  // Performanz
-
-------------------------------------------
-
-== Templates
-
-== Type Traits // Türe zu öffnen
-
-------------------------------------------
-
-Utility Klassen:  C++ 17
-
-std::string_view
-
-------------------------------------------
-
-  Zuviel Hierarchie als zuwenig.
+Zuviel Hierarchie als zuwenig.
 
 Was wollen wir modellieren ???
 
@@ -160,15 +125,11 @@ class Line
  Zuviel Hierarchie: Wenn wir die hat-ein Beziehung
  vorliegen haben: KEINE Vererbung.
 
-------------------------------------------
+====================================================
 
 https://wandbox.org/
 
-------------------------------------------
-
-== Flughöhe 
-
-------------------------------------------
+====================================================
 
 A)
 
@@ -193,7 +154,7 @@ auto tueWas(bool flag, int n, double m) -> double
     
 WHY ????????????????????????????
 
-=======================================
+====================================================
 
 Evolution von Programmiersprachen:
 
@@ -223,22 +184,23 @@ Lambda:  "Lambda-Methoden"
 
 Exakt:  Ein Lambda ist ein OBJEKT !!!!!!!!!!
 
-===========================================
+====================================================
 
 Cpp Insights:
+
+https://cppinsights.io/
 
 Converter:
 
 Modern C++ ==> Classic C++
 
-===========================================
+====================================================
 
 Embedded:
 
 constexpr
 
 https://github.com/pelocpp/cpp_modern/blob/master/GeneralSnippets/ConstExpr/Constexpr.md
-
 
         constexpr Complex c3 = c1 + c2;
 00007FF74F1C2660  movss       xmm0,dword ptr [__real@40800000 (07FF74F241D3Ch)]  
@@ -296,30 +258,12 @@ Speziellen Operator:
 
 Zieltyp operator "" _kilogramm  (params) 
 
-================================================
-
-
-Prototype	Prototype Pattern – auch als Virtueller Konstruktor bezeichnet.
-
-Decorator
-
-Adapter
-
-Proxy
-
-Template Method
-
-Visitor Method
-
-RAII
 
 ================================================
 
 new / delete
 
 C++ 11:  Smart Pointer  // std::weak_ptr
-
-
 
 ================================================
 
@@ -328,9 +272,6 @@ Lebenszyklus
 Rule-of-Three
 Rule-of-Five
 Rule-of-Zero
-
-
-
 
 ===============================================
 
