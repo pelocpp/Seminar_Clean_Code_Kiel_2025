@@ -124,8 +124,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BraceInitialization.cpp" />
     <ClCompile Include="constexpr.cpp" />
     <ClCompile Include="constexpr2.cpp" />
+    <ClCompile Include="Explicit.cpp" />
+    <ClCompile Include="InitializerList.cpp" />
     <ClCompile Include="Lambda.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="UDL.cpp" />

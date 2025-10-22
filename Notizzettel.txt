@@ -54,6 +54,8 @@ Nutzung von Smart Pointer Klassen (std::unique_ptr, std::shared_ptr und std::wea
 
 Initialisierung
 
+Verschieben ist besser als Kopieren (std::move)
+
 Ressourcenverwaltung mit RAII
 
 Range-based for-Loop
@@ -81,6 +83,7 @@ Neue Utility Klassen
 
 Welche Vorteile bietet die Klasse std::string_view gegenüber std::string?
 
+explicit
 
 STL
 
@@ -294,3 +297,54 @@ Speziellen Operator:
 Zieltyp operator "" _kilogramm  (params) 
 
 ================================================
+
+
+Prototype	Prototype Pattern – auch als Virtueller Konstruktor bezeichnet.
+
+Decorator
+
+Adapter
+
+Proxy
+
+Template Method
+
+Visitor Method
+
+RAII
+
+================================================
+
+new / delete
+
+C++ 11:  Smart Pointer  // std::weak_ptr
+
+
+
+================================================
+
+Lebenszyklus
+
+Rule-of-Three
+Rule-of-Five
+Rule-of-Zero
+
+
+
+
+===============================================
+
+std::initializer_list:  STACK (C++ 11)
+std::vector:            HEAP
+
+std::string
+std::string_view        Schlanker als std::string (C++ 17)
+
+===============================================
+
+std::vector
+
+std::vector<std::string> vec(10);   // Size: 10, 10 Elemente: 0
+std::vector<std::string> vec{ 10 }; // Size: 1, Wert: 10
+
+===============================================
