@@ -137,6 +137,9 @@
     <ClCompile Include="Topic_09_Weak_Pointer.cpp" />
     <ClCompile Include="Topic_11_MoveSemantics.cpp" />
     <ClCompile Include="Topic_12_UniquePtr.cpp" />
+    <ClCompile Include="Topic_13_Variant.cpp" />
+    <ClCompile Include="Topic_14_StringView.cpp" />
+    <ClCompile Include="Topic_15_Array.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

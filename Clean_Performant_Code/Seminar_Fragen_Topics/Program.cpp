@@ -9,8 +9,11 @@ extern void main_weak_pointer();
 extern void main_rvalue_lvalue();
 extern void main_move_semantics();
 extern void main_unique_ptr();
+extern void main_variant();
+extern void main_string_view();
+extern void main_array();
 
 void main()
 {
-    main_unique_ptr();
+    main_array();
 }

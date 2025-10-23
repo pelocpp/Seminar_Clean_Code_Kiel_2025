@@ -650,6 +650,141 @@ Clean Code:
 
 Frage:  Move-Semantik UND Return Value
 
+========================================
+
+C++  // Clean Code // Aktuelle Versionen
+
+==> Clean
+
+==> Performanz
+
+std::string
+std::string_view ==> const char*
+
+C-Style Array:
+std::array<int, 10>
+==> std::span
+
+C++ 17 // C++ 20
+----------------
+
+== Programmieren mit Datentypen
+== std::variant
+
+===========================================
+
+
+std::variant:
+
+Kann mehrere Werte unterschiedlichen Typs
+aufnehmen ... zu einem Zeitpunkt nur EINEN.
+
+Typen müssen bekannt sein.
+
+Excel:  Zelle // Cell
+
+
+Cell: ==> num. Werte, Zeichenketten, Datum, Uhrzeit, Currency, ...
+
+Man kann einen std::variant besuchen.
+
+========================================
+
+All-In
+
+auto: Variablen-Vereinbarung
+auto: Rückgabetyp
+
+auto: Parameter // C++ 20
+
+auto visitor = [](const auto& elem)
+{
+    std::println("{}", elem);
+};
+
+
+Templates:
+
+template <typename T>
+auto visitor = [](const T& elem)
+{
+    std::println("{}", elem);
+};
+
+=====================================================
+
+
+std::string s; 
+
+std::string s = "111111111111111";  // HEAP
+
+
+const char* cp = "11111111111111111111111111111";
+
+==>  std::string_view
+
+     Mini-Hülle: a) const char*
+                 b) Length
+
+Konstanten Extra Speicher
+
+Text-Segment // Code-Segment
+
+
+Ein std::string_view ist ein NON-OWNING Objekt.
 
 
 
+Diskussion:
+
+substr-Methode // Teilzeichenkette:  Offset, Length
+
+a) std::string
+
+   ==> Neues Speicherbereich am HEAP
+       Umkopieren
+
+b) std::string_view
+
+   ==> std::string_view:
+
+   Ptr mit Offset addieren
+   Length ist bekannt
+
+
+c) std::stringstream
+
+===========================================
+
+std::array
+std::span
+
+C-Array:  
+
+int numbers[100];   ==> int*   // to decay
+
+std::array
+
+Hülle:  Pointer + LENGTH
+
+Fixed-Size Array
+
+C-Array:  
+
+int n= ???;
+numbers[n] = 123; // Bereichscheck
+
+std::array:  dto.
+
+ABER:   Methode at
+
+numbers.at(n) = 123;  // Bereichscheck // Exception
+
+std::span:    NON-OWNING Container
+
+a) Anfangsadresse
+b) Länge
+
+C-Array
+std::array
+std::vector
