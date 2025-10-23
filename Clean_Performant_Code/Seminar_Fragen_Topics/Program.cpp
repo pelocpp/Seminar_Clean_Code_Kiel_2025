@@ -4,8 +4,13 @@ extern void main_literals();
 extern void main_brace_initialization();
 extern void main_initializer_list();
 extern void main_explicit_keyword();
+extern void main_shared_ptr();
+extern void main_weak_pointer();
+extern void main_rvalue_lvalue();
+extern void main_move_semantics();
+extern void main_unique_ptr();
 
 void main()
 {
-    main_explicit_keyword();
+    main_unique_ptr();
 }

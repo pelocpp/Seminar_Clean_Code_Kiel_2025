@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Topic_10_RValue.cpp" />
     <ClCompile Include="Topic_05_BraceInitialization.cpp" />
     <ClCompile Include="Topic_02_Constexpr.cpp" />
     <ClCompile Include="Topic_03_Constexpr_CRC.cpp" />
@@ -132,6 +133,10 @@
     <ClCompile Include="Topic_01_Lambda.cpp" />
     <ClCompile Include="Program.cpp" />
     <ClCompile Include="Topic_03_UDL.cpp" />
+    <ClCompile Include="Topic_08_Shared_Pointer.cpp" />
+    <ClCompile Include="Topic_09_Weak_Pointer.cpp" />
+    <ClCompile Include="Topic_11_MoveSemantics.cpp" />
+    <ClCompile Include="Topic_12_UniquePtr.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

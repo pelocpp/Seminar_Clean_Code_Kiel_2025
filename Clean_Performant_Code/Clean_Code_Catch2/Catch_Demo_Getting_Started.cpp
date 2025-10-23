@@ -38,7 +38,7 @@ TEST_CASE ("Factorials are computed", "[factorial]") {
 
 TEST_CASE("More Factorials are computed", "[factorial]") {
 
-    CHECK(Factorial(6)  == 720);
+    CHECK(Factorial(6)  == 721);
     CHECK(Factorial(7)  == 5040);
     CHECK(Factorial(8)  == 40320);
     CHECK(Factorial(9)  == 362'880);
@@ -257,8 +257,8 @@ TEST_CASE("Bugs, bugs, bugs", "[Bug]")
     auto match_expression = Catch::EndsWith("as a service");
 
     REQUIRE_THAT(str1, match_expression);
-    REQUIRE_THAT(str2, match_expression);
     REQUIRE_THAT(str3, match_expression);
+    REQUIRE_THAT(str2, match_expression);
 }
 
 TEST_CASE("More Bugs, bugs, bugs", "[Checked_Bug]")

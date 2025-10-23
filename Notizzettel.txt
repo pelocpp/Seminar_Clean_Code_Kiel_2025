@@ -1,6 +1,7 @@
 ====================================================
 
 Seminar "Clean Code"
+--------------------
 
 Guten Morgen // Moin
 
@@ -11,6 +12,12 @@ EMail:
 peter.loos@gmx.de
 
 https://github.com/pelocpp
+
+====================================================
+
+Entwurfsmuster:
+
+https://github.com/pelocpp/cpp_design_patterns
 
 ====================================================
 
@@ -58,7 +65,7 @@ Donnerstag:
 
 =) Smart-Pointer (std::shared / std:weak_ptr)
 
-=) Move-Seemantik
+=) Move-Semantik
 
 =) Programmieren mit Datentypen
 
@@ -289,3 +296,360 @@ std::vector<std::string> vec(10);   // Size: 10, 10 Elemente: 0
 std::vector<std::string> vec{ 10 }; // Size: 1, Wert: 10
 
 ===============================================
+
+Vorbemerkung:
+
+== UML
+
+== Konzeptionelle Beispiel  // clientCode
+
+== Real-World Beispiel
+
+
+
+Adapter:
+
+== XML
+== JSON
+
+Pattern:  Bewährte Lösung
+
+
+== Frage zu Pattern:
+
+Wieweit muss / sollte man sich an die
+Vorgaben eines Pattern halten ???
+
+i)  Es sind Abweichungen absolut zulässig.
+
+ii) Das Pattern sollte immer noch erkennbar sein.
+
+Detailfrage:
+
+Es spricht nichts dagegen, den Adaptee durch
+ein Interface zu abstrahieren.
+
+ICloneable ==> 
+
+IEnumerator ==> 
+
+===============================================
+
+Proxy:
+
+===============================================
+
+
+== Adapter
+
+== Proxy
+
+== Template Method
+
+== Prototype Pattern // Virtueller Konstruktor
+
+
+Alle drei Pattern haben mit Methoden von Objekten zu tun.
+
+
+
+Tetris
+
+==> Figuren // 7
+
+Die Figuren bewegen sich auf dieselbe Weise
+-------------------------------------------
+
+Jede Figur besitzt ihre eigenen Regeln,
+um sich korrekt bewegen zu können.
+
+===> Schablonen Methode  // Template Method
+
+======================================================
+
+Virtueller Konstruktor
+
+C++ // Klassen:  Konstruktor
+
+Konstruktor ===> aufrufen
+
+Game Programming:
+
+Spielebrett:  Schach
+
+==> Figuren.
+
+ChessFigure*  board [8][8] ;
+
+ChessFigure:
+  Pawn
+  Rook
+  Queen
+
+Nächsten Zug: 
+
+ChessFigure*  copy = board;
+
+Kopie:   Zeiger der aktuellen Figuren kopieren ??? 
+
+Ich will die Figuren kopiert haben:
+
+Problem: Kenne nur Basisklassenzeiger !!!
+
+Virtueller Konstruktor Pattern
+
+=========================================
+
+Decorator
+
+== Hüllenobjekt
+
+== Wrapper
+
+Decorator ==> Ausschmücken  // hinzufügen
+
+hinzufügen  ==> ableiten // spezialisieren.
+
+Hierarchie :  Mittel der Vererbung steht nicht zur Verfügung.
+
+== Objekt (erweitert) ==> Hülle
+
+======================================================
+
+Feste Klassen
+
+==> Laufzeit etwas ergänzen
+
+Policy-Based Design
+-------------------
+
+A) Beispiel:
+
+new:
+
+int* ptr = new int(123);  // 1 int
+
+int* ptr = new int[100];  // 100 int
+
+------------------
+
+delete ptr;
+
+delete[] ptr;
+
+UB:  Undefined Behaviour
+
+
+====================================================
+
+RAII
+
+Resources:
+
+Socket, SqlConnection, Mutex, ....
+
+== open, attach, connect , ...
+== close, dettach, disconnect, ...  // <===
+
+Sonderfall:  new / delete  ==> Smart Pointer
+
+
+Idee:
+
+C++  // Objekte // Konstruktoren , Destruktoren
+
+Destruktor ==> Am Ende des Scopes // Deterministisch.
+
+Resource:  ==> Hüllenobjekt
+
+Konstruktor ==> open, ...
+Destruktor  ==> close, ...
+
+==================================================
+
+Simple Tool:
+
+Getting Started:
+
+Catch2 Framework:
+
+Catch2: "Header Only" (V. 2)
+
+Catch2: Library (V. 3)
+
+================================================
+
+std::unique_ptr
+std::shared_ptr
+std::weak
+
+https://github.com/pelocpp/cpp_modern/blob/master/GeneralSnippets/SharedPtr/SharedPtr.md
+
+std::unique_ptr:
+
+Es gibt nur einen Besitzer.   // Verschieben ...
+
+std::shared_ptr:
+
+Es gibt nur mehrere Besitzer. 
+
+Verwaltung // Control Bock
+
+Clou: std::shared_ptr funktioniert nicht IMMER.
+
+std::weak
+
+a) Wie funktioniert dieser technisch.
+b) Whyyyyyyyyyyyyyyyyyyy
+
+Zyklische Referenzen:
+
+Beispiel:
+
+Observer Pattern:
+
+Event Source  // Subject
+
+   == Objekt mit State, der sich ändert
+   == Diesen Zustand möchte ich beobachten
+
+Event Client // Observer:
+
+  == Interessieren sich für Änderungen des Zustands an der Event Source
+
+ 
+ 
+ -- Event Client kennt Event Source
+ -- Event Source kennt Event Clients, um diese bei Änderungen anrufen zu können.
+
+
+
+ void connect()
+ {
+     EventClient client;
+     EventSource source;
+
+     source.attach (client);
+ }
+
+ // ===================================================
+
+ Subject:
+
+
+   == std::list<> m_observers;
+
+   == std::list<Observer*> m_observers;
+
+   == std::list< std::shared_ptr <Observer> > m_observers;
+
+Schlecht:  
+
+   Ein Subject sollte // DARF nicht zum OWNER // Besitzer von 
+   Beobachtern werden.
+
+   == std::list< std::weak_ptr <Observer> > m_observers;
+
+   a) Ein Subject kontrolliert keine Lebensdauer
+
+   b) detach .... Lösung.
+
+   c) lock: ==> std::shared_ptr ==> update
+            ==> EMTPY std::shared_ptr ==> Ergebnis ignorieren.
+
+
+
+std::shared_ptr:  Referenz-Zähler (use_count) // 10 // 0
+
+Wann nehme ich überhaupt einen std::shared_ptr ???
+
+==> Wenn ich ein Besitzer sein möchte.
+
+== Daten
+== Visualisierung
+
+==> Daten an die Visualisierung reichen ???
+
+    std::shared_ptr ???
+
+    std::weak_ptr ???   lock ==> nullptr
+  
+  
+std::shared_ptr: 
+std::weak_ptr: 
+
+Clean :)
+
+Dynamischer Speicher:
+
+   new  // delete <===
+
+std::shared_ptr:  1 // 2 // 3 // 2 // 1 // 0
+std::weak_ptr: 
+
+Auch hier gibt es Probleme ...
+
+C#:  Java: Garbage Collector.
+
+widget += listener;   // attach // detach
+
+// widget -= listener;
+
+Probleme des Referenzzählens:
+
+====================================
+
+C++ 11:   
+
+Unnütze Kopien von Objekten
+
+class Person
+{
+private:
+    std:string m_name;
+
+public:
+    const std:string& getName () { return m_name; }
+}
+
+========================================
+
+Kopieren: Bad
+
+Verschieben: Gut :)
+
+i)  Neuen Referenz-Typ
+ii) Verschieben
+
+C++  Referenz:
+
+std::string s;
+
+std::string& rs = s;
+
+
+A) Technik
+B) Whyyyyyyyyyyyyyyyyyyyyyyyyy
+
+DRY ??? 
+
+===================================
+
+Move-Semantik:
+
+...:  2A0    // temp. Objekt // wird freigegeben
+...:  F90
+
+
+...: 0E0
+
+===================================
+
+Clean Code:
+
+
+Frage:  Move-Semantik UND Return Value
+
+
+
+
